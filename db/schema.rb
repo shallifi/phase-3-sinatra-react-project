@@ -10,13 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_28_031106) do
+ActiveRecord::Schema.define(version: 2022_07_01_002110) do
+
+  create_table "audience_members", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.integer "household_income"
+    t.string "city"
+    t.boolean "first_time"
+  end
+
+  create_table "feedbacks", force: :cascade do |t|
+    t.integer "score"
+    t.string "what_did_you_enjoy"
+    t.string "what_needs_improvement"
+    t.boolean "would_you_watch_again"
+    t.string "comment"
+    t.string "how_did_you_hear_about_the_show"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "show_piece_id"
+    t.integer "audience_member_id"
+  end
 
   create_table "show_pieces", force: :cascade do |t|
     t.string "title"
     t.integer "number_of_performers"
     t.integer "length"
-    t.string "music_style"
+    t.string "music_album"
     t.string "movement_style"
   end
 

@@ -4,7 +4,7 @@ class CreateShowPieces < ActiveRecord::Migration[6.1]
       t.string :title
       t.integer :number_of_performers
       t.integer :length
-      t.string :music_style
+      t.string :music_album
       t.string :movement_style
     end
   end

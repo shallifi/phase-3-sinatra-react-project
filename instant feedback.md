@@ -8,8 +8,8 @@ movement style
 
 Feedback
 score 1-10
-likes
-needs improvement
+what did you enjoy
+what needs improvement
 would you watch again
 comment
 audience_id
