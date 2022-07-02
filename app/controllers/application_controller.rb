@@ -3,27 +3,16 @@ class ApplicationController < Sinatra::Base
   
   # Add your routes here
   get "/" do
-    { message: "Good luck with your project!" }.to_json
+    { message: "INSTANT Feedback app!" }.to_json
   end
 
-  # the get routes 
-  get "/show_pieces" do 
-    ShowPiece.all.to_json
-  end
 
  
 
-  get "/feedback" do
-    Feedback.all.to_json
-  end
 
    # the create for   feedback
    
-  private
 
-  def serialize(objects)
-    objects.to_json
-  end
 
 
 
