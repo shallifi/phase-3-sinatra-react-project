@@ -4,6 +4,7 @@ class FeedbacksController < ApplicationController
         serialize(Feedback.all)
     end
 
+    # post feedback
     post "/feedbacks" do
         serialize(Feedback.create(feedback_params))
     end
@@ -17,6 +18,7 @@ class FeedbacksController < ApplicationController
 
     private
 
+    # method defines the params
     def feedback_params 
         allowed_params = ["score","what_did_you_enjoy","what_needs_improvement","would_you_watch_again","comment","how_did_you_hear_about_the_show","created_at", "show_piece_id", "audience_member_id"]
         params.filter do |key,val|

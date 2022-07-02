@@ -5,16 +5,19 @@ class AudienceMembersController < ApplicationController
         serialize(AudienceMember.all)
       end
     #   post/create route
-    post "/audience_members/new" do
+    post "/audience_members" do
         serialize(AudienceMember.create(audience_params))
     end
+
+
     
     
     
     private
        
     def audience_params 
-        allowed_params = ["name","age","household_income","city","first_time"]
+        # allowed_params = ["name","age","household_income","city","first_time"]
+        allowed_params = %w(name age household_income city first_time )
         params.filter do |key,val|
             allowed_params.include?(key)
         end
