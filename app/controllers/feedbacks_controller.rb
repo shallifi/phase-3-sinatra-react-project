@@ -8,6 +8,13 @@ class FeedbacksController < ApplicationController
         serialize(Feedback.create(feedback_params))
     end
 
+    # patch feedback
+    patch "/feedbacks/:id" do
+        fback = Feedback.find(params[:id])
+        fback.update(feedback_params)
+        serialize(fback)
+    end
+
     private
 
     def feedback_params 
