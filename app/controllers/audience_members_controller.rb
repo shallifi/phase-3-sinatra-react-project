@@ -13,7 +13,7 @@ class AudienceMembersController < ApplicationController
     
     private
        
-       def audience_params 
+    def audience_params 
         allowed_params = ["name","age","household_income","city","first_time"]
         params.filter do |key,val|
             allowed_params.include?(key)
