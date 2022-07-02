@@ -14,3 +14,4 @@ use Rack::JSONBodyParser
 # Our application
 run ApplicationController
 #any inheriting controller will need "use" not "run"
+use AudienceMembersController

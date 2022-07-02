@@ -11,15 +11,23 @@ class ApplicationController < Sinatra::Base
     ShowPiece.all.to_json
   end
 
-  get "/audience_members" do
-    AudienceMember.all.to_json
-  end
+ 
 
   get "/feedback" do
     Feedback.all.to_json
   end
 
-    
+   # the create for   feedback
+   
+  private
+
+  def serialize(objects)
+    objects.to_json
+  end
+
+
+
+
 
 
 end
