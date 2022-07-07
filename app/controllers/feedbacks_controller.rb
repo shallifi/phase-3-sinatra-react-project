@@ -16,6 +16,14 @@ class FeedbacksController < ApplicationController
         serialize(fback)
     end
 
+    # delete feedback
+    delete "/feedbacks/:id" do
+        fback = Feedback.find(params[:id])
+        fback.destroy
+        serialize(fback)
+    end
+
+
     private
 
     # method defines the params
